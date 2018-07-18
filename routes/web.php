@@ -21,6 +21,8 @@ Route::get('/movies/create', 'MoviesController@create');
 
 Route::get('/movies/{id}', 'MoviesController@show');
 
+Route::get('/movies/genres/{genre}', 'GenresController@show');
+
 Route::post('/movies', 'MoviesController@store');
 
 Route::post('/movies/{id}', 'CommentsController@store');
