@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
+
 @section('content')
+@include('partials.side-bar')
 <div class="container">
         @foreach($movies as $movie)
             <div class="blog-post">

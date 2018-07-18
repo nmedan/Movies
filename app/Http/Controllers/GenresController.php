@@ -10,6 +10,7 @@ class GenresController extends Controller
 {
     public function show($genre) {
          $movies = Movie::all()->where('genre', $genre);
-         return view('movies.index', compact('movies'));
+         $lastmovies = Movie::all()->sortByDesc('created_at')->take(5);
+         return view('movies.index', compact('movies', 'lastmovies'));
     }
 }

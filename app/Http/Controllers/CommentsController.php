@@ -12,11 +12,11 @@ class CommentsController extends Controller
 {
     public function store($id) {
          $this->validate(request(), ['content'=>'required']);
-         $movie = Movie::find($id);
+         $movie = Movie::findOrFail($id);
          Comment::create([
             'movie_id' => $movie->id,
             'content' => request('content')
          ]);
-         return redirect('/movies/{$movie->id}');
+         return redirect('/movies/'.$movie->id);
     }
 }
