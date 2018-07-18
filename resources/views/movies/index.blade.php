@@ -2,18 +2,11 @@
 
 @section('content')
 <div class="container">
-<h3>Movies</h3>
-    <table>
-        <tr>
-                <td><b>Title</b></td>
-                <td><b>Storyline</b></td>
-        </tr>
         @foreach($movies as $movie)
-            <tr>
-                <td><a href="/movies/{{$movie->id}}">{{$movie->title}}</a></td>
-                <td>{{$movie->storyline}}</td>
-            </tr>
+            <div class="blog-post">
+               <h2 class="blog-post-title"><a href="/movies/{{$movie->id}}">{{$movie->title}}</a></h2>
+               <p>{{$movie->storyline}}</p>
+            </div>
         @endforeach
-    </table>
 </div>
 @endsection

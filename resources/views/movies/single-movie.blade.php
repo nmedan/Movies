@@ -9,12 +9,23 @@
     <div><b>Year: </b> {{$movie->year}}</div>
     <div><b>Storyline: </b> {{$movie->storyline}}</div>
 </div>
-<h4>Comments</h4>
-    @foreach ($movie->comments() as $comment)
+</div>
+<div class="container">
+  @foreach ($movie->comments as $comment)
         <div class="blog-post">
         <p class="blog-post-meta">{{$comment->created_at}}</a></p>
         <p>{{$comment->content}}</p>
         </div> 
     @endforeach
-@endsection
-</div>
+ </div>
+    <div class="container">
+        <form method="post" action="/movies/{{$movie->id}}">
+        {{csrf_field()}}      
+        <div class="form-group">
+            <input type="text" name="content" class="form-control" placeholder="Add comment">
+            @include('partials.error-message', ['fieldName' => 'content'])
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+    </div>
+ @endsection

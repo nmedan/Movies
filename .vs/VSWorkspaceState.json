@@ -4,15 +4,13 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Http\\Middleware",
     "\\database",
     "\\database\\migrations",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\movies",
-    "\\resources\\views\\partials",
-    "\\routes"
+    "\\resources\\views\\layouts",
+    "\\resources\\views\\partials"
   ],
-  "SelectedNode": "\\app\\Comment.php",
+  "SelectedNode": "\\resources\\views\\movies\\index.blade.php",
   "PreviewInSolutionExplorer": false
 }
